@@ -15,9 +15,9 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 7px 80px;
+    padding: 5px 80px;
     font-size: 14px;
-    gap: 30px;
+    gap: 15px;
 }
 .top-header p{
   margin-right: auto;
@@ -54,3 +54,331 @@ body{
     font-size: small;
 }
 
+.nav ul li{
+    display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+/* Navigation Bar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+/* 
+     position: fixed;
+    top: 45px;          /* Same height as top header */
+    /* left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    transition: all .4s ease; */ 
+}
+
+.navbar.scrolled{
+    top: 0;             /* Move to the top */
+    padding: 0px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.logo h2{
+    color: #8B5918;
+    font-size: 28px;
+    font-weight: 700;
+}
+.logo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.navbar.scrolled .logo img{
+    width:80px;
+    height: 80px;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+    transition: .3s;
+}
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color:#F1CF69;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+.nav-links a:hover{
+    color: #F1CF69;
+}
+
+.navbar.scrolled .nav-links a{
+
+    padding:10px 10px;
+
+    font-size:16px;
+
+}
+
+.navbar.scrolled .call-icon{
+
+    width:48px;
+    height:48px;
+
+}
+
+.navbar.scrolled .call-icon i{
+
+    font-size:20px;
+
+}
+
+.navbar.scrolled .call-info h4{
+
+    font-size:20px;
+
+}
+
+.navbar.scrolled .call-info span{
+
+    font-size:13px;
+
+}
+
+.nav-links a:hover{
+    color:#8B5918;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-right i{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quote-btn{
+    background-color: #8B5918;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.quote-btn:hover{
+    color: #F1CF69;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+}
+
+.call-box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.call-icon{
+    width: 40px;
+    height: 40px;
+    background-color: #9b6718;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.call-icon i{
+    color: white;
+    font-size: 15px;
+}
+
+.call-info span{
+    display: block;
+    color: #777;
+    font-size: 15px;
+}
+
+.call-info h4{
+    color: #9b6718;
+    font-size: 15px;
+    font-weight: 220;
+}
+.call-info a{
+    text-decoration: none;
+    color: #9b6718;
+    font-size: 15px;
+    font-weight: 600;
+}
+.logo img{
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+
+/*======================
+      HERO SECTION
+========================*/
+
+.hero-slider{
+
+    position:relative;
+
+    height:85vh;
+    min-height: 700px;
+
+    overflow:hidden;
+
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active{
+
+    opacity:1;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:1;
+
+}
+
+.hero-content{
+
+    position:absolute;
+
+    z-index:2;
+
+    top:50%;
+
+    left:8%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    max-width:650px;
+
+}
+
+.hero-content span{
+
+    background:#c69b3b;
+
+    padding:10px 20px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+}
+
+.hero-content h1{
+
+    font-size:65px;
+
+    margin:25px 0;
+
+    line-height:1.1;
+
+}
+
+.hero-content p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.btn1{
+
+    background:#0b6b2f;
+
+    color:white;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+}
+
+.btn2{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+}
